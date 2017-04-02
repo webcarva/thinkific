@@ -35,6 +35,7 @@ $(document).ready(function () {
         $(this).addClass('active');
         
         $('img.active').attr('src', $(this).data('img')); 
+        $('.player-image').css({'background-image':'url(assets/imgs/cover1.jpg)'});
         $('h1.title').html($(this).data('title')); 
         $('h2.album').html($(this).data('album')); 
         $('h2.artist').html($(this).data('artist')); 
