@@ -1,5 +1,6 @@
 /* Colours */
 /* Mixins */
+/* Generic */
 body {
   background-color: #e9e9e9;
   width: 50%;
@@ -7,6 +8,7 @@ body {
   margin-right: auto;
   font-family: 'Roboto', sans-serif;
 }
+/* Audio component */
 audio {
   display: none;
 }
@@ -88,6 +90,44 @@ audio {
   margin: 0;
   padding: 0;
 }
+#player .player-content .player-buttons img {
+  padding: 10px;
+  vertical-align: middle;
+}
 #player .player-content .pause {
   display: none;
+}
+/* Responsive */
+@media (max-width: 1024px) {
+  #player .player-image {
+    height: 300px;
+  }
+  #player .player-image img {
+    visibility: visible;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    width: 75%;
+  }
+  #player .player-image {
+    height: auto;
+  }
+  #player .player-image img {
+    visibility: visible;
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  body {
+    width: 95%;
+  }
+  #player .player-image {
+    height: auto;
+  }
+  #player .player-image img {
+    visibility: visible;
+    width: 100%;
+  }
 }

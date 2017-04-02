@@ -27,7 +27,7 @@
 	background-clip:         padding-box;
 }
 
-
+/* Generic */
 body {
     background-color: @light-gray;
     width: 50%;
@@ -36,10 +36,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/* Audio component */ 
 audio {
     display: none;
 }
-
 #player {
     
     margin-left: auto;
@@ -112,14 +112,59 @@ audio {
         }
         
         .player-buttons {
-
+            img {
+                padding: 10px;
+                vertical-align: middle;
+            }
         }
         
-        .play {
-            
-        }
         .pause {
             display: none;
         }
     }
 }
+
+/* Responsive */
+@media (max-width: 1024px) {
+    #player { 
+        .player-image {
+            height: 300px;
+            
+            img {
+                visibility: visible;
+                width: 100%;  
+            } 
+        }
+    }
+}
+@media (max-width: 768px) {
+    body {
+        width: 75%;
+    }
+    #player { 
+        .player-image {
+            height: auto;
+            
+            img {
+                visibility: visible;
+                width: 100%;  
+            } 
+        }
+    }
+}
+@media (max-width: 500px) {
+    body {
+        width: 95%;
+    }
+    #player { 
+        .player-image {
+            height: auto;
+            
+            img {
+                visibility: visible;
+                width: 100%;  
+            } 
+        }
+    }
+}
+

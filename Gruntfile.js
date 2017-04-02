@@ -51,8 +51,7 @@ module.exports = function(grunt) {
           },
           build: {
                 files: {
-                    'css/live/style-min.css': 'css/src/style.css',
-                    'css/live/normalize-min.css': 'css/src/normalize.css'
+                    'css/live/style-min.css': 'css/src/style.css'
                 }
             }
         },
