@@ -7,6 +7,6 @@ cd thinkific - open directory
 
 npm install - to install dependancies
 
-grunt watch - to automate less comilie, script minification and jslinting
+grunt watch - to automate less compile, script minification and jslinting
 
 example can be found here: http://www.webcarva.co.uk/thinkific
