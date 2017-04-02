@@ -94,15 +94,66 @@ audio {
   padding: 10px;
   vertical-align: middle;
 }
+#player .player-content .player-buttons img:hover {
+  cursor: pointer;
+}
+#player .player-content .player-buttons .fa {
+  font-size: 1.2em;
+  opacity: 0.5;
+  position: relative;
+  top: 2px;
+}
+#player .player-content .player-buttons .fa:hover {
+  cursor: pointer;
+}
 #player .player-content .pause {
   display: none;
+}
+#player .player-playlist ul {
+  margin: 0;
+  padding: 0px;
+  list-style: none;
+}
+#player .player-playlist ul li {
+  color: #999;
+  background-color: #000;
+  opacity: 0.8;
+  border: 1px solid #fff;
+  padding: 10px;
+}
+#player .player-playlist ul li:first-of-type {
+  margin-bottom: -1px;
+}
+#player .player-playlist ul li:last-of-type {
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-borde-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -moz-borde-bottom-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+#player .player-playlist ul li:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+#player .player-playlist ul li i {
+  display: none;
+}
+#player .player-playlist ul li.active {
+  color: #fff;
+}
+#player .player-playlist ul li.active i {
+  display: inline-block;
 }
 /* Responsive */
 @media (max-width: 1024px) {
   #player .player-image {
     height: 300px;
   }
-  #player .player-image img {
+  #player .player-image img.active {
     visibility: visible;
     width: 100%;
   }
@@ -114,7 +165,7 @@ audio {
   #player .player-image {
     height: auto;
   }
-  #player .player-image img {
+  #player .player-image img.active {
     visibility: visible;
     width: 100%;
   }
@@ -122,12 +173,5 @@ audio {
 @media (max-width: 500px) {
   body {
     width: 95%;
-  }
-  #player .player-image {
-    height: auto;
-  }
-  #player .player-image img {
-    visibility: visible;
-    width: 100%;
   }
 }
