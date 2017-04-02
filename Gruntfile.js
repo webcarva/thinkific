@@ -62,7 +62,7 @@ module.exports = function(grunt) {
             // for stylesheets, watch css and less files 
             // only run less and cssmin stylesheets: { 
             files: ['css/src//*.css', 'css/src//*.less'], 
-            tasks: ['less', 'cssmin'],
+            tasks: ['default'],
 
             // for scripts, run jshint and uglify 
             scripts: { 

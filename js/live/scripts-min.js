@@ -1,0 +1,5 @@
+/*
+ technical 2017-04-02 
+*/
+
+$(document).ready(function(){var a=new Audio("assets/audio/02_Three_Little_Birds.mp3","assets/audio/02_Three_Little_Birds.ogg"),b=$(".play"),c=$(".pause");a.canPlayType("audio/mpeg;")?(a.type="audio/mpeg",a.src="assets/audio/02_Three_Little_Birds.mp3"):(a.type="audio/ogg",a.src="assets/audio/02_Three_Little_Birds.ogg"),$(".play").on("click",function(b){b.preventDefault(),a.play(),$(this).hide(),c.fadeIn()}),$(".pause").on("click",function(c){c.preventDefault(),a.pause(),$(this).hide(),b.fadeIn()}),a.addEventListener("timeupdate",function(){var b=a.currentTime,c=a.duration;$(".player-progress").stop(!0,!0).animate({width:(b+.25)/c*100+"%"},250,"linear");var d="0"+Math.floor(b/60),e="0"+Math.floor(b-60*d),f=d.substr(-1)+":"+e.substr(-2);$(".player-start").html(f)})});
