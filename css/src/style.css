@@ -73,7 +73,12 @@ audio {
 }
 #player .player-controls .player-tracker .player-progress {
   width: 0;
-  background: yellow;
+  background-color: #33E9FF;
+  background-image: -webkit-gradient(linear, left top, right top, from(#33E9FF), to(#0193FF));
+  background-image: -webkit-linear-gradient(left, #33E9FF, #0193FF);
+  background-image: -moz-linear-gradient(left, #33E9FF, #0193FF);
+  background-image: -ms-linear-gradient(left, #33E9FF, #0193FF);
+  background-image: -o-linear-gradient(left, #33E9FF, #0193FF);
   height: 3px;
   display: block;
 }
@@ -137,12 +142,21 @@ audio {
 #player .player-playlist ul li:hover {
   cursor: pointer;
   opacity: 0.9;
+  background-color: #363636;
+  background: -webkit-gradient(linear, left top, left bottom, from(#363636), to(#000));
+  background: -webkit-linear-gradient(top, #363636, #000);
+  background: -moz-linear-gradient(top, #363636, #000);
+  background: -ms-linear-gradient(top, #363636, #000);
+  background: -o-linear-gradient(top, #363636, #000);
 }
 #player .player-playlist ul li i {
   display: none;
 }
 #player .player-playlist ul li.active {
   color: #fff;
+}
+#player .player-playlist ul li.active span {
+  color: #33E9FF;
 }
 #player .player-playlist ul li.active i {
   display: inline-block;

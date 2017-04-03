@@ -26,7 +26,27 @@ $(document).ready(function () {
         return tune;
     };
     
-    var tune = init();
+    var tuneEvents = function () {
+        tune.addEventListener('timeupdate', function() {
+            $('.player-end').html('0:00');
+            
+            var currentTime = tune.currentTime;
+            var duration = tune.duration;
+            $('.player-progress').stop(true,true).animate({'width':(currentTime+0.25)/duration*100+'%'},250,'linear');
+
+            var mins = "0" + Math.floor(currentTime / 60);
+            var secs = "0" +  Math.floor(currentTime - mins * 60);
+            var progress = mins.substr(-1) + ":" + secs.substr(-2);
+            $('.player-start').html(progress);
+            
+            if (tune.duration) { 
+                var minsx = "0" + Math.floor(duration / 60);
+                var secsx = "0" +  Math.floor(duration - mins * 60);
+                var durationFormat = minsx.substr(-1) + ":" + secsx.substr(-2);
+                $('.player-end').html(durationFormat);
+            }
+        });
+    };
     
     $('.player-playlist ul li').on('click', function () {
         $('.player-playlist ul li').removeClass('active');
@@ -51,7 +71,6 @@ $(document).ready(function () {
         });
         
         var tune = init();
-        
         tuneEvents();
     });
     
@@ -96,28 +115,6 @@ $(document).ready(function () {
         tune.playbackRate = 1.0;
     });
     
-    var tuneEvents = function () {
-        tune.addEventListener('timeupdate', function() {
-            $('.player-end').html('0:00');
-            
-            var currentTime = tune.currentTime;
-            var duration = tune.duration;
-            $('.player-progress').stop(true,true).animate({'width':(currentTime+0.25)/duration*100+'%'},250,'linear');
-
-            var mins = "0" + Math.floor(currentTime / 60);
-            var secs = "0" +  Math.floor(currentTime - mins * 60);
-            var progress = mins.substr(-1) + ":" + secs.substr(-2);
-            $('.player-start').html(progress);
-            
-            if (tune.duration) { 
-                var minsx = "0" + Math.floor(duration / 60);
-                var secsx = "0" +  Math.floor(duration - mins * 60);
-                var durationFormat = minsx.substr(-1) + ":" + secsx.substr(-2);
-                $('.player-end').html(durationFormat);
-            }
-        });
-    };
-    
     next.on('click', function () {
         if (playerIndex === ( $(".player-playlist ul li").size() - 1 ) ) {
             playerIndex = 0;
@@ -135,4 +132,7 @@ $(document).ready(function () {
         }
         $(".player-playlist ul li[data-index='" + playerIndex + "']").click();
     });
+    
+    var tune = init();
+    tuneEvents();
 });
